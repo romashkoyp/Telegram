@@ -4,6 +4,7 @@
 
 import json
 import csv
+import re
 
 csv_input = r'C:\Users\romas\Documents\Code\Telegram\Data\russian_regions_vocabulary.csv'
 json_events = r'C:\Users\romas\Documents\Code\Telegram\Data\all_events_sentences.json'
@@ -19,7 +20,7 @@ with open(csv_input, 'r', encoding='utf-8') as csv_file:
         regions_data.append({
             'region_id': row[0],
             'region_name_x': row[1],
-            'region_name_y': row[2].lower()
+            'region_name_y': row[2]
         })
 
 # print(f'{regions_data[:10]}\n')
@@ -53,7 +54,8 @@ for entry in json_data_events:
 # Iterate through sentences and find matches
 with open(output_file_path, 'w', encoding='utf-8') as output_file:
     output_file.write("Region_ID*Region_base_name*Region_form_name*Event_base_name*Event_Name*Word_Before_and_Event_Name\n")
-
+    order = 0
+    length = len(json_data_events)
     # Iterate through sentences and find matches
     for event in events:
         event_code = event['event_code']
@@ -63,11 +65,16 @@ with open(output_file_path, 'w', encoding='utf-8') as output_file:
         event_sentence = event['sentence'].lower()
 
         for region_data in regions_data:
-            reg = region_data['region_name_y'].lower()
+            reg = region_data['region_name_y']
             region_id = region_data['region_id']
             region_name_x = region_data['region_name_x']
-            if reg in event_sentence:
+            pattern = rf'\b{re.escape(reg.lower())}\b'
+            if re.search(pattern, event_sentence):
                 output_line = f"{region_id}*{region_name_x}*{reg}*{event_code}*{event_name}*{word_before_event_name}\n"
                 output_file.write(output_line)
+        
+        share = (order / length) * 100
+        print(f'{share:.2f}% complete ({order + 1} of {length})')
+        order += 1
 
 print("Results have been saved to", output_file_path)

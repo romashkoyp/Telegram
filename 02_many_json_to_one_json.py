@@ -1,6 +1,6 @@
 # Code detects JSON files in folder and subfolders
 # extracts data from these JSON files and
-# cleans text data from emojies, whitespaces and unusual charachters
+# cleans text data from emojies, whitespaces and unusual characters
 # create only one JSON file with all data
 
 import json
@@ -41,7 +41,7 @@ for subdir, _, files in os.walk(root_directory):
                 extracted_data = []
 
                 for message in data.get('messages', []):
-                    # Extract information from the message (your existing code)
+                    # Extract information from the message
                     channel = message.get('from', '')
                     post_id = message.get('id', '')
                     post_date = message.get('date', '')
