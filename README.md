@@ -1,4 +1,9 @@
 # Description
+These Python scripts allow to:
+- create vocabularies with all form of words using own list of Russian words in nominative form (works with all parts of speech)
+- join several JSON files into one
+- clean text from emojies, whitespaces and unusual characters
+- search matching whole words and whole phrases from vocabularies in JSON file and count result for each matching
 
 ## Data preparation
 
@@ -107,3 +112,48 @@ Region_ID*Region_base_name*Region_form_name*Event_base_name*Event_Name*Word_Befo
 - After pasting data in Excel, filtering and making subtotal result looks as:
 ![result_1](image_result.jpg)
 ![result_2](image_result_2.jpg)
+
+### Counting regions in posts
+Python script gets as input vocabulary of regions from russian_regions_vocabulary.csv with 829 names` forms and JSON file with 19011 posts and counts each matching for each word and phrase form in JSON file. Result is saved to TXT file with '*' delimiter:
+```
+region_id*region_name*region_form*count
+1*Алтайский край*Алтайский край*17
+1*Алтайский край*Алтайского края*70
+1*Алтайский край*Алтайскому краю*0
+1*Алтайский край*Алтайским краем*0
+1*Алтайский край*Алтайском крае*23
+1*Алтайский край*Барнаул*13
+1*Алтайский край*Барнаула*19
+1*Алтайский край*Барнаулу*0
+1*Алтайский край*Барнаулом*0
+1*Алтайский край*Барнауле*11
+...
+```
+
+### Counting words in posts
+- Python script gets as input vocabulary of words from words_vocabulary.csv with 1391 words` forms with data structure:
+```
+word     ,word_form
+патриот  ,патриот
+патриот  ,патриоты
+патриот  ,патриота
+патриот  ,патриотов
+патриот  ,патриоту
+патриот  ,патриотам
+патриот  ,патриотом
+патриот  ,патриотами
+...
+```
+- gets as input JSON file with 19011 posts and counts each matching for each word form in JSON file. Result is saved to TXT file with '*' delimiter:
+```
+word*word_form*count
+патриот*патриот*45
+патриот*патриоты*107
+патриот*патриота*23
+патриот*патриотов*32
+патриот*патриоту*0
+патриот*патриотам*1
+патриот*патриотом*9
+патриот*патриотами*8
+...
+```
