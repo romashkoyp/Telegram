@@ -32,7 +32,7 @@ In output JSON file we get **19011 posts** with structure:
     "post_text":
 }
 ```
-### Russian region vocabulary preparation
+### Russian regions` vocabulary preparation
 Python script https://github.com/romashkoyp/Telegram/blob/master/04_parser_translate_ru_full.py
 - gets russian_regions.csv as list of names:
 ```
@@ -55,7 +55,7 @@ region_id ,region_name
        01 ,Барнауле
         ...
 ```
-- python script merges 2 CSV files russian_regions.csv and russian_regions_translate.csv by ID to make single CSV russian_regions_vocabulary.csv with structure:
+- Python script https://github.com/romashkoyp/Telegram/blob/master/05_merge_csv.py merges 2 CSV files russian_regions.csv and russian_regions_translate.csv by ID to make single CSV russian_regions_vocabulary.csv with structure:
 ```
 region_id ,region_name_x  ,region_name_y
         1 ,Алтайский край ,Алтайский край
@@ -70,3 +70,39 @@ region_id ,region_name_x  ,region_name_y
         1 ,Алтайский край ,Барнауле
         ...
 ```
+### Events` list preparation
+- Python script https://github.com/romashkoyp/Telegram/blob/master/06_search_events_sentences.py extracts event-related information from the JSON file with all posts, specifically the text enclosed in «» symbols. It checks for specific criteria, including word count (<17 words between «» symbols) and formatting, and cross-references the extracted information with file event_vocabulary.csv: words which are expected before '«' symbol (from column word_1). 
+```
+word_id ,word_1
+слёт    ,слёт
+слёт    ,слёты
+слёт    ,слёта
+слёт    ,слётов
+слёт    ,слёту
+слёт    ,слётам
+слёт    ,слётом
+слёт    ,слётами
+слёт    ,слёте
+слёт    ,слётах
+...
+```
+- Result is extracted in file all_events_sentences.json which represents **3989 sentences** with data structure:
+```
+{
+    "sentence":
+    "event_code":
+    "word_before":
+    "event_name":
+    "word_before_event_name":
+}
+```
+## Data extraction
+### Counting regions and events in sentences
+- Python script gets as input vocabulary of regions from russian_regions_vocabulary.csv (829 names` forms) and sentences with events from all_events_sentences.json (3989 sentences), searches in case insensitive manner all combinations in sentences where are together region name and event. Result is saved in TXT file with '*' delimiter:
+```
+Region_ID*Region_base_name*Region_form_name*Event_base_name*Event_Name*Word_Before_and_Event_Name
+40*Санкт-Петербург*Санкт-Петербурге*конференция*«Педагог и наставник в пространстве НЕОдидактики»*конференция «Педагог и наставник в пространстве НЕОдидактики»
+...
+```
+- After pasting data in Excel, filtering and making subtotal result looks as:
+![result](image_result.jpg)

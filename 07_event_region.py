@@ -1,5 +1,5 @@
 # Code gets vocabulary of regions from CSV
-# searchs words from vocabulary in sentences of JSON file
+# searches words from vocabulary in sentences of JSON file
 # saves result in TXT file for exporting it in EXCEL
 
 import json
