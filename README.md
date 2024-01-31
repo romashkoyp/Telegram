@@ -105,4 +105,5 @@ Region_ID*Region_base_name*Region_form_name*Event_base_name*Event_Name*Word_Befo
 ...
 ```
 - After pasting data in Excel, filtering and making subtotal result looks as:
-![result](image_result.jpg)
+![result_1](image_result.jpg)
+![result_2](image_result_2.jpg)
