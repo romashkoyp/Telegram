@@ -32,3 +32,41 @@ In output JSON file we get **19011 posts** with structure:
     "post_text":
 }
 ```
+### Russian region vocabulary preparation
+Python script https://github.com/romashkoyp/Telegram/blob/master/04_parser_translate_ru_full.py
+- gets russian_regions.csv as list of names:
+```
+region_id ,region_name     ,region_2...
+       01 ,Алтайский край  ,Барнаул...
+       ...
+```
+- returns after banding words and phrases on translate.ru as russian_regions_translate.csv with **list of words and phrases in all possible cases without duplicates**:
+```
+region_id ,region_name
+       01 ,Алтайский край
+       01 ,Алтайского края
+       01 ,Алтайскому краю
+       01 ,Алтайским краем
+       01 ,Алтайском крае
+       01 ,Барнаул
+       01 ,Барнаула
+       01 ,Барнаулу
+       01 ,Барнаулом
+       01 ,Барнауле
+        ...
+```
+- python script merges 2 CSV files russian_regions.csv and russian_regions_translate.csv by ID to make single CSV russian_regions_vocabulary.csv with structure:
+```
+region_id ,region_name_x  ,region_name_y
+        1 ,Алтайский край ,Алтайский край
+        1 ,Алтайский край ,Алтайского края
+        1 ,Алтайский край ,Алтайскому краю
+        1 ,Алтайский край ,Алтайским краем
+        1 ,Алтайский край ,Алтайском крае
+        1 ,Алтайский край ,Барнаул
+        1 ,Алтайский край ,Барнаула
+        1 ,Алтайский край ,Барнаулу
+        1 ,Алтайский край ,Барнаулом
+        1 ,Алтайский край ,Барнауле
+        ...
+```
