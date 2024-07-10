@@ -8,13 +8,13 @@ import os
 import re
 
 # Specify the root directory containing JSON files
-root_directory = r'C:\Users\romas\Documents\Code\Telegram\Analysis'
+root_directory = r'C:\Users\romas\Documents\Code\Telegram\Analysis\17.05.2024'
 
 # Ensure the output directory exists
 output_directory = os.path.join(root_directory, 'Data')
 os.makedirs(output_directory, exist_ok=True)
 
-file_name = 'big_json'
+file_name = 'big_json_17.05.2024'
 
 # Function to reset word count and create a new output file
 def create_new_file(directory, extension):
