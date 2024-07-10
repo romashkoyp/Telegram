@@ -1,7 +1,7 @@
 # Code detects JSON files in folder and subfolders
 # extracts data from these JSON files and
 # cleans text data from emojies, whitespaces and unusual characters
-# create only one JSON file with all data
+# create only one JSON file with all data 
 
 import json
 import os
