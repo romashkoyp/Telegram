@@ -1,3 +1,5 @@
+# script divide json file into desired quantity json files
+
 import json
 import os
 
