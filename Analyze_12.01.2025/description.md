@@ -10,5 +10,4 @@
 |6.|Find all posts with 'SVO' from [Raw_Data](https://github.com/romashkoyp/Telegram/blob/master/Analyze_12.01.2025/four_channels.json) and count [negative words](https://github.com/romashkoyp/Telegram/blob/master/Analyze_12.01.2025/words_vocabulary_negative.csv)|[Script](https://github.com/romashkoyp/Telegram/blob/master/08_count_words_from_list.py)|[quantity_negative_words](https://github.com/romashkoyp/Telegram/blob/master/Analyze_12.01.2025/word_quantity_negative.txt)|
 |7.|Count [loan words](https://github.com/romashkoyp/Telegram/blob/master/Analyze_12.01.2025/words_vocabulary_eng.csv) in [Raw_Data](https://github.com/romashkoyp/Telegram/blob/master/Analyze_12.01.2025/four_channels.json)|[Script](https://github.com/romashkoyp/Telegram/blob/master/08_count_words_from_list.py)|[quantity_loan_words](https://github.com/romashkoyp/Telegram/blob/master/Analyze_12.01.2025/word_quantity_eng.txt)|
 
-### Final result presented here
-[Final result](https://github.com/romashkoyp/Telegram/blob/master/Analyze_12.01.2025/result_12.01.2025.xlsx)
+### Final result presented [here](https://github.com/romashkoyp/Telegram/blob/master/Analyze_12.01.2025/result_12.01.2025.xlsx)
