@@ -1,6 +1,14 @@
-# Description of results from current folder
+### Algorithm for data analisys
 
+|#| Task   | Method  | Result  |
+|:------| :------| :------ | :------ |
+|1.|Get text data from all posts of 4 public Telegram channels for desired period|Telegram's Desktop own functional|[Raw_Data](https://github.com/romashkoyp/Telegram/blob/master/Analyze_12.01.2025/four_channels.json)|
+|2.|Calculate [regions name](https://github.com/romashkoyp/Telegram/blob/master/Analyze_12.01.2025/russian_regions_vocabulary.csv) in [Raw_Data](https://github.com/romashkoyp/Telegram/blob/master/Analyze_12.01.2025/four_channels.json)|[Script](https://github.com/romashkoyp/Telegram/blob/master/08_region_quantity.py)|[Counted_Regions](https://github.com/romashkoyp/Telegram/blob/master/Analyze_12.01.2025/region_quantity.txt)|
+|3.|Get events' name and type from [Raw_Data](https://github.com/romashkoyp/Telegram/blob/master/Analyze_12.01.2025/four_channels.json)|[Script](https://github.com/romashkoyp/Telegram/blob/master/06_search_events_sentences.py)|[All_Events_Sentences](https://github.com/romashkoyp/Telegram/blob/master/Analyze_12.01.2025/all_events_sentences.json)|
+|4.|Count how many events are in each [region](https://github.com/romashkoyp/Telegram/blob/master/Analyze_12.01.2025/russian_regions_vocabulary.csv)|[Script](https://github.com/romashkoyp/Telegram/blob/master/07_event_region.py)|[Regions_And_Events](https://github.com/romashkoyp/Telegram/blob/master/Analyze_12.01.2025/event_region.txt)|
+|5.|Find all posts with 'SVO' from [Raw_Data](https://github.com/romashkoyp/Telegram/blob/master/Analyze_12.01.2025/four_channels.json) and count [positive words](https://github.com/romashkoyp/Telegram/blob/master/Analyze_12.01.2025/words_vocabulary_positive.csv)|[Script](https://github.com/romashkoyp/Telegram/blob/master/08_count_words_from_list.py)|[quantity_positive_words](https://github.com/romashkoyp/Telegram/blob/master/Analyze_12.01.2025/word_quantity_positive.txt)|
+|6.|Find all posts with 'SVO' from [Raw_Data](https://github.com/romashkoyp/Telegram/blob/master/Analyze_12.01.2025/four_channels.json) and count [negative words](https://github.com/romashkoyp/Telegram/blob/master/Analyze_12.01.2025/words_vocabulary_negative.csv)|[Script](https://github.com/romashkoyp/Telegram/blob/master/08_count_words_from_list.py)|[quantity_negative_words](https://github.com/romashkoyp/Telegram/blob/master/Analyze_12.01.2025/word_quantity_negative.txt)|
+|7.|Count [loan words](https://github.com/romashkoyp/Telegram/blob/master/Analyze_12.01.2025/words_vocabulary_eng.csv) in [Raw_Data](https://github.com/romashkoyp/Telegram/blob/master/Analyze_12.01.2025/four_channels.json)|[Script](https://github.com/romashkoyp/Telegram/blob/master/08_count_words_from_list.py)|[quantity_loan_words](https://github.com/romashkoyp/Telegram/blob/master/Analyze_12.01.2025/word_quantity_eng.txt)|
 
-| Task   | Script  | Result  |
-| :------| :------ | :------ |
-|Get text data from all posts of 4 public Telegram channels for desired period|||
+### Final result presented here
+[Final result](https://github.com/romashkoyp/Telegram/blob/master/Analyze_12.01.2025/result_12.01.2025.xlsx)
