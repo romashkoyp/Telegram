@@ -7,7 +7,7 @@ import json
 import re
 import csv
 
-json_input = r'C:\Users\romas\Documents\Code\Telegram\Data\big_json.json'
+json_input = r'C:\Users\romas\Documents\Code\Telegram\Data\4_channels\four_channels.json'
 csv_input = r'C:\Users\romas\Documents\Code\Telegram\Data\event_vocabulary.csv'
 
 # Load JSON file

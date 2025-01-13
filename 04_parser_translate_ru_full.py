@@ -8,8 +8,8 @@ from urllib.parse import quote
 import requests
 from bs4 import BeautifulSoup
 
-CSV_INPUT = r'C:\Users\romas\Documents\Code\Telegram\Data\words.csv'
-CSV_OUTPUT = r'C:\Users\romas\Documents\Code\Telegram\Data\words_vocabulary.csv'
+CSV_INPUT = r'C:\Users\romas\Documents\Code\Telegram\Analyze_12.01.2025\eng_words.csv'
+CSV_OUTPUT = r'C:\Users\romas\Documents\Code\Telegram\Analyze_12.01.2025\words_vocabulary_eng.csv'
 
 base_url = "https://www.translate.ru/%D1%81%D0%BF%D1%80%D1%8F%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B8%20%D1%81%D0%BA%D0%BB%D0%BE%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5/%D1%80%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9/{word}"
 
@@ -38,6 +38,7 @@ with open(CSV_INPUT, 'r', encoding='utf-8') as file:
 
         # Write the header row to the output CSV
         writer.writerow([columns[0], columns[1]])
+        # writer.writerow([columns[0]])
 
         # Iterate through the rest of the rows
         for row in csv_reader:

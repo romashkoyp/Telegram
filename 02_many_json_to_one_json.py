@@ -8,13 +8,13 @@ import os
 import re
 
 # Specify the root directory containing JSON files
-root_directory = r'C:\Users\romas\Documents\Code\Telegram\Analysis\17.05.2024'
+root_directory = r'C:\Users\romas\Desktop\Vera'
 
 # Ensure the output directory exists
 output_directory = os.path.join(root_directory, 'Data')
 os.makedirs(output_directory, exist_ok=True)
 
-file_name = 'big_json_17.05.2024'
+file_name = 'one'
 
 # Function to reset word count and create a new output file
 def create_new_file(directory, extension):
@@ -24,7 +24,7 @@ def create_new_file(directory, extension):
 all_extracted_data = []
 
 # Counter for global post ID
-global_post_id_counter = 1
+#global_post_id_counter = 1
 
 # Iterate through each subdirectory in the root directory
 for subdir, _, files in os.walk(root_directory):
@@ -63,13 +63,13 @@ for subdir, _, files in os.walk(root_directory):
                         extracted_data.append({
                             "channel": channel,
                             "post_id": post_id,
-                            "global_post_id": global_post_id_counter,
+                            #"global_post_id": global_post_id_counter,
                             "post_date": post_date,
                             "post_text": cleaned_text
                         })
 
                         # Increment the global post ID counter
-                        global_post_id_counter += 1
+                        #global_post_id_counter += 1
 
                 # Append the extracted data for the current file to the overall list
                 all_extracted_data.extend(extracted_data)

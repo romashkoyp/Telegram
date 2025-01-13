@@ -35,7 +35,7 @@ def split_json_file_by_channel(input_file, output_directory):
             json.dump(items, out_file, ensure_ascii=False, indent=2)
 
 # Example usage:
-input_file_path = r'Data\big_json.json'
-output_directory_path = r'Data\Json'
+input_file_path = r'C:\Users\romas\Documents\Code\Telegram\Data\big_json.json'
+output_directory_path = r'C:\Users\romas\Documents\Code\Telegram\Data\Channels'
 
 split_json_file_by_channel(input_file_path, output_directory_path)

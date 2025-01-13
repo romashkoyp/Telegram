@@ -7,8 +7,8 @@ import csv
 import re
 
 csv_input = r'C:\Users\romas\Documents\Code\Telegram\Data\russian_regions_vocabulary.csv'
-json_events = r'C:\Users\romas\Documents\Code\Telegram\Data\all_events_sentences.json'
-output_file_path = r'C:\Users\romas\Documents\Code\Telegram\Data\event_region.txt'
+json_events = r'C:\Users\romas\Documents\Code\Telegram\Analyze_12.01.2025\all_events_sentences.json'
+output_file_path = r'C:\Users\romas\Documents\Code\Telegram\Analyze_12.01.2025\event_region.txt'
 
 # Load CSV file with regions
 regions_data = []

@@ -6,9 +6,9 @@ import json
 import csv
 import re
 
-json_input = r'C:\Users\romas\Documents\Code\Telegram\Data\big_json.json'
+json_input = r'C:\Users\romas\Documents\Code\Telegram\Data\4_channels\four_channels.json'
 csv_input = r'C:\Users\romas\Documents\Code\Telegram\Data\russian_regions_vocabulary.csv'
-txt_output = r'C:\Users\romas\Documents\Code\Telegram\Data\region_count.txt'
+txt_output = r'C:\Users\romas\Documents\Code\Telegram\Analyze_12.01.2025\region_quantity.txt'
 
 # Read the CSV file
 with open(csv_input, 'r', encoding='utf-8') as csv_file:
