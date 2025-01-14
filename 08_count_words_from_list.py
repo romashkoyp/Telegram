@@ -10,11 +10,11 @@ import json
 import csv
 import re
 
-json_input = r'C:\Users\romas\Documents\Code\Telegram\Data\4_channels\four_channels.json'
+json_input = r'C:\Users\romas\Documents\Code\Telegram\Analyze_12.01.2025\four_channels.json'
 
 # CSV file with words to count, where: word_id (first column) is unique identifier, and word_form is form of word_id to count
-csv_input = r'C:\Users\romas\Documents\Code\Telegram\Analyze_12.01.2025\words_vocabulary_eng.csv'
-txt_output = r'C:\Users\romas\Documents\Code\Telegram\Analyze_12.01.2025\word_quantity_eng.txt'
+csv_input = r'C:\Users\romas\Documents\Code\Telegram\Analyze_12.01.2025\words_vocabulary_negative.csv'
+txt_output = r'C:\Users\romas\Documents\Code\Telegram\Analyze_12.01.2025\word_quantity_negative_all.txt'
 
 # Load JSON file
 with open(json_input, 'r', encoding='utf-8') as json_file:
